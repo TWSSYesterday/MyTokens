@@ -70,7 +70,8 @@ public class SQLHelper {
 						conn = DriverManager.getConnection("jdbc:mysql://" 
 								+ ((cs.getString("mysql.host") != null) ? cs.getString("mysql.host") : "localhost")
 								+ ":" + ((cs.getString("mysql.port") != null) ? cs.getString("mysql.port") : "3306")
-								+ "/" + ((cs.getString("mysql.database") != null) ? cs.getString("mysql.database") : "mytokens"),
+								+ "/" + ((cs.getString("mysql.database") != null) ? cs.getString("mysql.database") : "mytokens")
+                                + "?autoReconnect=" + cs.getString("mysql.autoreconnect"),
 								((cs.getString("mysql.user") != null) ? cs.getString("mysql.user") : "root"),
 								((cs.getString("mysql.password") != null) ? cs.getString("mysql.password") : ""));
 					} catch (ClassNotFoundException e) {
